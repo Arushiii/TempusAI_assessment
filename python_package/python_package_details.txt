@@ -1,0 +1,26 @@
+Describe a Python package that you use regularly. What are the most useful class/methods/functions? What are the limitations, gotchas, bugs in the package? Can you
+white-board a strategy that might work to improve the package? We are interested in how well
+you know your tools and how interested you are in improving stuff you use.
+
+- To answer this question, I would like to discuss a package called mudata. It is a Python package designed to handle multi-modality datasets (e.g., RNA-seq, ATAC-seq, proteomics) while maintaining shared metadata across observations (cells) and variables (features). This is very similar to the AnnData concept, which is commonly used for single-modality data stored in the H5AD format. To deal with datasets containing multiple modalities, the MuData package uses the H5MU format.When working with H5MU objects, the most popular Python package is mudata.
+
+Useful Features
+1) Multi-Modality Handling:MuData can efficiently handle multiple modalities within a single object.
+2) Straightforward Process: The workflow is simple and user-friendly.
+3) Selective Loading:Users can load specific modalities without reading the full dataset, which is resource-efficient.
+4) Similarity to AnnData:Many functions are similar to AnnData, enabling preprocessing, filtering, and visualization of data.
+5) Efficient Storage:The H5MU format allows easy reading and writing of multi-modal datasets.
+6) Access to AnnData: Users can easily fetch individual AnnData objects from the MuData object for modality-specific analysis.
+
+Limitations
+1) Limited Documentation:
+The documentation for mudata is limited compared to AnnData. Users often need to rely on online resources, research, and community discussions to resolve issues.
+2) H5MU Format Compatibility: The H5MU format is not compatible with many popular single-cell analysis tools like Seurat.
+Conversion to other formats (e.g., H5AD, Seurat object, or SingleCellExperiment object) can sometimes result in the loss of multi-modal metadata, requiring a deep understanding of each data format for accurate conversion. I have developed inhouse scripts for the same. 
+3) Large Datasets: Handling multiple modalities can be memory-intensive and time-consuming. Reading data in chunks has been a partial workaround for this issue.
+4) Unclear Error Messages:Error messages are sometimes not clear. This is partly because mudata is still under active development
+
+Improvements
+1) Tool compatibility: popular scrna data tools to support the H5MU format directly. I have developed and maintain code for conversion between .h5mu and other common formats like .loom, .h5ad, or Seurat objects.
+2) Data loading: Integrate libraries like Dask for memory-efficient processing of large datasets.
+3) Documentation: share the debugging solution back to community for the documentationn purpose. 
