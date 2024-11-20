@@ -1,0 +1,4 @@
+   R_Squared Adjusted_R_Squared F_Statistic      P_Value         Dataset
+1 0.06962954         0.05024682    3.592352 6.407651e-02     Iris-setosa
+2 0.74688439         0.74161115  141.636664 6.297786e-16  Iris-virginica
+3 0.56858983         0.55960212   63.263024 2.586190e-10 Iris-versicolor

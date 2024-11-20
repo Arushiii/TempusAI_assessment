@@ -1,0 +1,135 @@
+Nov-19 23:32:11.364 [main] DEBUG nextflow.cli.Launcher - $> nextflow run Tempus-AI-regression/ --input /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/data/regression_samplesheet.csv --outdir pipeline_results/ --split_column Species --x_var PetalLengthCm --y_var SepalLengthCm -profile docker
+Nov-19 23:32:11.403 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.1
+Nov-19 23:32:11.417 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/arushishrivastava/.nextflow/plugins; core-plugins: nf-amazon@2.9.1,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.2,nf-tower@1.9.3,nf-wave@1.7.3
+Nov-19 23:32:11.440 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-19 23:32:11.441 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-19 23:32:11.442 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Nov-19 23:32:11.449 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-19 23:32:11.895 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/nextflow.config
+Nov-19 23:32:11.896 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/nextflow.config
+Nov-19 23:32:11.902 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/arushishrivastava/.nextflow/secrets/store.json
+Nov-19 23:32:11.904 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@3b920bdc] - activable => nextflow.secret.LocalSecretsProvider@3b920bdc
+Nov-19 23:32:11.909 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Nov-19 23:32:12.406 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [bih, cfc_dev, uzl_omics, ifb_core, embl_hd, denbi_qbic, alice, mjolnir_globe, uppmax, giga, incliva, ilifu, uge, rosalind_uge, lugh, mccleary, unibe_ibu, vai, czbiohub_aws, jax, roslin, ccga_med, tes, scw, unc_longleaf, tigem, tubingen_apg, google, apollo, ipop_up, vsc_calcua, pdc_kth, googlels, ceci_nic5, stjude, daisybio, eddie, medair, biowulf, apptainer, bi, bigpurple, adcra, cedars, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, icr_davros, ceres, arm, munin, rosalind, hasta, cfc, uzh, shu_bmrc, ebi_codon_slurm, ebc, ccga_dx, crick, ku_sund_danhead, marvin, shifter, biohpc_gen, mana, mamba, york_viking, unc_lccc, wehi, awsbatch, wustl_htcf, arcc, ceci_dragon2, imperial, maestro, software_license, genotoul, nci_gadi, abims, janelia, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, create, sage, cambridge, jex, podman, ebi_codon, cheaha, xanadu, nyu_hpc, test, marjorie, computerome, ucd_sonic, seg_globe, sanger, dkfz, bluebear, pasteur, einstein, ethz_euler, m3c, test_full, imb, ucl_cscluster, tuos_stanage, azurebatch, hki, crukmi, csiro_petrichor, qmul_apocrita, wave, docker, engaging, gis, hypatia, psmn, eva, nygc, fgcz, conda, crg, singularity, mpcdf_viper, pe2, self_hosted_runner, tufts, uw_hyak_pedslabs, debug, genouest, cbe, unsw_katana, gitpod, phoenix, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac]
+Nov-19 23:32:12.423 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Nov-19 23:32:12.431 [main] DEBUG nextflow.cli.CmdRun - Launching `Tempus-AI-regression/main.nf` [mighty_crick] DSL2 - revision: 9cada4c6c0
+Nov-19 23:32:12.432 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-schema@2.1.1]
+Nov-19 23:32:12.433 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-19 23:32:12.433 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-schema@2.1.1]
+Nov-19 23:32:12.433 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-schema version: 2.1.1
+Nov-19 23:32:12.438 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-schema@2.1.1' resolved
+Nov-19 23:32:12.438 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-schema@2.1.1'
+Nov-19 23:32:12.442 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-schema@2.1.1
+Nov-19 23:32:12.467 [main] DEBUG nextflow.Session - Session UUID: 282f4836-b8b8-4c7b-b998-d1bf02a06ede
+Nov-19 23:32:12.467 [main] DEBUG nextflow.Session - Run name: mighty_crick
+Nov-19 23:32:12.467 [main] DEBUG nextflow.Session - Executor pool size: 8
+Nov-19 23:32:12.472 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-19 23:32:12.474 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Nov-19 23:32:12.503 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.1 build 5930
+  Created: 18-11-2024 12:21 UTC (07:21 EDT)
+  System: Mac OS X 14.6.1
+  Runtime: Groovy 4.0.23 on Java HotSpot(TM) 64-Bit Server VM 21.0.2+13-LTS-58
+  Encoding: UTF-8 (UTF-8)
+  Process: 41776@MGB030549 [192.168.1.167]
+  CPUs: 8 - Mem: 24 GB (656.5 MB) - Swap: 0 (0)
+Nov-19 23:32:12.512 [main] DEBUG nextflow.Session - Work-dir: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work [Mac OS X]
+Nov-19 23:32:12.530 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Nov-19 23:32:12.534 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-19 23:32:12.566 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-19 23:32:12.571 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Nov-19 23:32:12.607 [main] DEBUG nextflow.Session - Session start
+Nov-19 23:32:12.608 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/pipeline_results/pipeline_info/execution_trace_2024-11-19_23-32-12.txt
+Nov-19 23:32:12.681 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-19 23:32:12.790 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+Nov-19 23:32:13.054 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-schema
+Nov-19 23:32:13.056 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-schema
+Nov-19 23:32:13.058 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+Nov-19 23:32:13.060 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [samplesheetToList:samplesheetToList]; plugin Id: nf-schema
+Nov-19 23:32:13.194 [main] INFO  nextflow.Nextflow - [1mInput/output options[0m
+  [0;34minput          : [0;32m/Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/data/regression_samplesheet.csv[0m
+  [0;34moutdir         : [0;32mpipeline_results/[0m
+  [0;34msplit_column   : [0;32mSpecies[0m
+  [0;34mx_var          : [0;32mPetalLengthCm[0m
+  [0;34my_var          : [0;32mSepalLengthCm[0m
+
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32mmighty_crick[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline[0m
+  [0;34mworkDir        : [0;32m/Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work[0m
+  [0;34mprojectDir     : [0;32m/Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression[0m
+  [0;34muserName       : [0;32marushishrivastava[0m
+  [0;34mprofile        : [0;32mdocker[0m
+  [0;34mconfigFiles    : [0;32m[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+Nov-19 23:32:13.195 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
+Nov-19 23:32:13.264 [main] DEBUG nextflow.validation.SchemaEvaluator - Started validating /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/data/regression_samplesheet.csv
+Nov-19 23:32:13.306 [main] DEBUG nextflow.validation.SchemaEvaluator - Validation of file '/Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/data/regression_samplesheet.csv' passed!
+Nov-19 23:32:13.306 [main] DEBUG nextflow.validation.SchemaValidator - Finishing parameters validation
+Nov-19 23:32:13.363 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SPLIT` matches process TEMPUSAI_REGRESSION:REGRESSION:SPLIT
+Nov-19 23:32:13.370 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-19 23:32:13.370 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-19 23:32:13.373 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Nov-19 23:32:13.376 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=24 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Nov-19 23:32:13.377 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Nov-19 23:32:13.404 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:REGRESSION_MODEL` matches process TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL
+Nov-19 23:32:13.405 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-19 23:32:13.405 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-19 23:32:13.410 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:COMBINE_RESULTS` matches process TEMPUSAI_REGRESSION:REGRESSION:COMBINE_RESULTS
+Nov-19 23:32:13.411 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-19 23:32:13.411 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-19 23:32:13.431 [main] DEBUG nextflow.Session - Config process names validation disabled as requested
+Nov-19 23:32:13.432 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
+Nov-19 23:32:13.432 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TEMPUSAI_REGRESSION:REGRESSION:SPLIT
+Nov-19 23:32:13.432 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL
+Nov-19 23:32:13.432 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TEMPUSAI_REGRESSION:REGRESSION:COMBINE_RESULTS
+Nov-19 23:32:13.432 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_0ce72e734ad77725: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./subworkflows/local/utils_nfcore_regression_pipeline/../../nf-core/utils_nextflow_pipeline/main.nf
+  Script_6fbcf8477f9d7d4c: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./subworkflows/local/utils_nfcore_regression_pipeline/../../nf-core/utils_nfcore_pipeline/main.nf
+  Script_215a636da7ab24a2: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./subworkflows/local/utils_nfcore_regression_pipeline/../../nf-core/utils_nfschema_plugin/main.nf
+  Script_2011ea1562e039fe: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./workflows/../module/local/regression_model.nf
+  Script_07e7e82eb6ca3516: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./workflows/../module/local/combine_results.nf
+  Script_ded91b6944e8e933: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/main.nf
+  Script_392672a90add0a2b: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./workflows/regression.nf
+  Script_25935628c64f606b: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./workflows/../module/local/split.nf
+  Script_9954f684224441da: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/Tempus-AI-regression/./subworkflows/local/utils_nfcore_regression_pipeline/main.nf
+Nov-19 23:32:13.432 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-19 23:32:13.432 [main] DEBUG nextflow.Session - Session await
+Nov-19 23:32:13.497 [Actor Thread 11] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.001 s; external sort time: 0.009 s; total time: 0.01 s
+Nov-19 23:32:13.499 [Actor Thread 11] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work/collect-file/29a928d62827c09c20a3e3d2590fe148
+Nov-19 23:32:13.507 [Actor Thread 11] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /var/folders/qf/pjlhk3013931prqfx4tc3wn80000gr/T/nxf-4806846753584813883
+Nov-19 23:32:13.547 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-19 23:32:13.548 [Task submitter] INFO  nextflow.Session - [82/28c636] Submitted process > TEMPUSAI_REGRESSION:REGRESSION:SPLIT (1)
+Nov-19 23:32:14.348 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: TEMPUSAI_REGRESSION:REGRESSION:SPLIT (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work/82/28c6363002058c31aaf762dc092fff]
+Nov-19 23:32:14.349 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Nov-19 23:32:14.369 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Nov-19 23:32:14.381 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-19 23:32:14.381 [Task submitter] INFO  nextflow.Session - [14/116501] Submitted process > TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL (2)
+Nov-19 23:32:14.388 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-19 23:32:14.389 [Task submitter] INFO  nextflow.Session - [ef/60e18b] Submitted process > TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL (1)
+Nov-19 23:32:14.393 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-19 23:32:14.393 [Task submitter] INFO  nextflow.Session - [a7/cd8294] Submitted process > TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL (3)
+Nov-19 23:32:15.278 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work/ef/60e18b55f07d72a3f79564b8189832]
+Nov-19 23:32:15.332 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL (3); status: COMPLETED; exit: 0; error: -; workDir: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work/a7/cd82942ca4501e0972b3081bb8ff2e]
+Nov-19 23:32:15.391 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: TEMPUSAI_REGRESSION:REGRESSION:REGRESSION_MODEL (2); status: COMPLETED; exit: 0; error: -; workDir: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work/14/1165015d785197b80be954df08340d]
+Nov-19 23:32:15.404 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-19 23:32:15.404 [Task submitter] INFO  nextflow.Session - [b9/969c1b] Submitted process > TEMPUSAI_REGRESSION:REGRESSION:COMBINE_RESULTS
+Nov-19 23:32:16.174 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: TEMPUSAI_REGRESSION:REGRESSION:COMBINE_RESULTS; status: COMPLETED; exit: 0; error: -; workDir: /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/work/b9/969c1b3b12f0df557aba37413e3e20]
+Nov-19 23:32:16.178 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-19 23:32:16.281 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Nov-19 23:32:16.281 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-19 23:32:16.287 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Nov-19 23:32:16.288 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Nov-19 23:32:16.294 [main] INFO  nextflow.Nextflow - -[0;35m[Tempus-AI/regression][0;32m Pipeline completed successfully[0m-
+Nov-19 23:32:16.299 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=5; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=2.8s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=3; peakMemory=18 GB; ]
+Nov-19 23:32:16.299 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Nov-19 23:32:16.300 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Nov-19 23:32:17.131 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Nov-19 23:32:17.451 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-19 23:32:17.474 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-schema@2.1.1'
+Nov-19 23:32:17.474 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-schema
+Nov-19 23:32:17.475 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Nov-19 23:32:17.475 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

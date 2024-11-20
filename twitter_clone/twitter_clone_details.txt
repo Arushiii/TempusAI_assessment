@@ -1,0 +1,96 @@
+Design a Scalable Twitter Clone in the Cloud
+
+Define a Minimum Viable Product (MVP). Imagine you are tasked with building a basic Twitter clone in the cloud (using GCP or another cloud platform). Start by outlining a basic set of features that you would include in a minimal version of the application. What core functionality must be supported?
+
+
+- The basic features that I would like to include in the Twitter clone are as follows:
+1) User Management: Key functionality - User Sign In/Sign Out, User Profile - contains information such as username, bio, etc.  
+2) Tweet Management: Key functionality - Post tweet, View tweet, Like or Unlike tweets.  
+3) Follower System: Key functionality - Users can follow or unfollow other users.  
+4) Search System: Key functionality - Users can search other users by username or use keywords to search for tweets.
+
+--
+
+Identify Required Cloud Resources. Describe the cloud resources you would use to build and deploy this MVP. How would you connect and configure them?
+
+To achieve this goal, the following cloud resources are required:
+
+1) Frontend: Firebase.  
+2) Backend: Firebase Authentication, Firestore, Cloud Storage, and Elasticsearch.  
+3) API: Google Cloud Functions.  
+4) Networking: Google Cloud Load Balancer and Cloud CDN.
+
+More Details:-
+1) User Management:
+   - For secure sign-in/sign-out, we use Firebase Authentication. We can also support email and password authentication.  
+   - To save user profile details, such as username, bio, or profile picture, we use Google Cloud Firestore.  
+
+2) Tweet Management:
+   - Create a Firestore schema for tweets and save all tweet details as a collection. The details can be fetched using Firestore queries for posting tweets, viewing tweets, or liking/unliking tweets.  
+   - Additionally, save media attachments related to tweets in Google Cloud Storage.  
+
+3) Follower System:
+   - Create a Firestore schema for follower relationships.  
+   - Use Firestore queries to fetch follower details. Moreover, add or remove entries in the `follows` collection as needed.  
+
+4) Search System:
+   - Basic search functionality can be implemented using Firestore.  
+   - For advanced keyword searches, Elasticsearch can index tweets and users with metadata, including hashtags. Integrate Elasticsearch with Cloud Functions to enable this feature.
+
+---
+
+Scaling Strategy. After launching the MVP, explain how you would scale the system to handle growing user traffic. What resources or architectural changes would be necessary for scaling?
+
+
+- The key domains to consider for scaling are compute resources, database, storage, search, networking, and cost.
+
+1) Compute Resources:
+   - Current Setup: Using Google Cloud Functions for API and backend logic.  
+   - Scaling Strategy: Use Google Kubernetes Engine (GKE). This will not only help manage traffic but also allow containerization of the backend, which can then be deployed on Kubernetes. By leveraging Kubernetes, we can enable auto-scaling based on CPU and memory usage.  
+
+2) Database:
+   - Current Setup: Firestore is used for saving user profiles, tweets, etc.  
+   - Scaling Strategy: Integrate hashtags and indexing to narrow down search results for more efficient and faster queries.  
+
+3) Storage:
+   - Current Setup: Cloud Storage is used for saving data related to tweets and media.  
+   - Scaling Strategy: Introduce lifecycle policies, archive storage after it crosses defined years, and regularly maintain and delete unwanted files.  
+
+4) Search:
+   - Current Setup: Firestore basic search.  
+   - Scaling Strategy: Implement indexing and hashtags for advanced keyword searches using Elasticsearch. This will significantly speed up the querying process.
+
+---
+
+Additional Features & Considerations. As the application grows, new features might be added. Discuss any potential additional features and the cloud resources needed to support them.
+
+- To build on top of the base structure, here are additional features that can be introduced:
+
+1) Live Notifications:
+   - Users receive updates on the spot regarding tweets, tags, or direct messages using Firebase Cloud Messaging.
+
+2) Analytical Dashboard:
+   - Integrate a feature that allows users to see where they spend their time the most, what type of tweets they are mostly interested in, or which users they interact with the most.  
+   - Use Firestore data to create dashboards with Google Cloud Data Studio.
+
+3) Messaging System:
+   - Users can send and receive messages from other users using the Firebase Realtime Database.
+
+---
+
+Key Questions. What critical questions would you need to address as you plan the system’s architecture and scaling strategy? There are various factors that are important to consider in advance:
+
+
+1) What are the key features expected from the product?  
+2) Understand the target audience that will be using the platform.  
+3) What purpose will the product serve?  
+4) Is this product for a limited group, company-wide, country-wide, or worldwide use? This question is important because it determines resource selection to avoid overloading due to high traffic or over-provisioning for few users.  
+5) How can we secure the data and platform?  
+6) How can we efficiently use compute resources?  
+7) How to handle large volumes of data?  
+8) How to store large amounts of data efficiently?  
+9) How can we optimize compute resource costs?  
+10) How can we make the platform more engaging and interactive?  
+11) How to handle maintenance?  
+12) How will the support team help users in case of technical issues?  
+13) How do we ensure the system’s reliability and fault tolerance?  

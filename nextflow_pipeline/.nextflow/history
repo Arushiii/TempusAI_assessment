@@ -1,0 +1,1 @@
+2024-11-19 23:32:12	5.5s	mighty_crick	OK	9cada4c6c0b19a5f2456c84c4cdbec48	282f4836-b8b8-4c7b-b998-d1bf02a06ede	nextflow run Tempus-AI-regression/ --input /Users/arushishrivastava/Desktop/tempus_coding/TempusAI_assessment/nextflow_pipeline/data/regression_samplesheet.csv --outdir pipeline_results/ --split_column Species --x_var PetalLengthCm --y_var SepalLengthCm -profile docker

@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/Tempus-AI/regression/master/assets/schema_input.json",
+    "title": "Tempus-AI/regression pipeline - params.input schema",
+    "description": "Schema for the file provided with params.input",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "dataset_name": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "dataset name must be provided and cannot contain spaces",
+                "meta": ["id"]
+            },
+            "dataset_file_path": {
+                "type": "string",
+                "format": "file-path",
+                "exists": true
+            }
+        },
+        "required": ["dataset_name", "dataset_file_path"]
+    }
+}
